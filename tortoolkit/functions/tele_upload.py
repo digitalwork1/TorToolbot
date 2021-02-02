@@ -228,7 +228,7 @@ async def upload_a_file(path,message,force_edit,database=None,thumb_path=None,us
     uploader_id = None
     if queue is not None:
         torlog.info(f"Waiting for the worker here for {file_name}")
-        msg = await msg.edit(f"{msg.text} - Waiting for a uploaders to get free")
+        msg = await msg.edit(f"{msg.text} - Upload in progress...")
         uploader_id = await queue.get()
         torlog.info(f"Waiting over for the worker here for {file_name} aquired worker {uploader_id}")
 
